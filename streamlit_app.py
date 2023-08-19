@@ -17,7 +17,8 @@ my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.co
 
 ## Provide and Option to select
 ##fruits_selected = streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index),['Apple', 'Avocado','Banana','Cantaloupe','Grapefruit','Grapes','Honeydew','Kiwifruit','Lemon','Lemon','Nectarine','Orange','Peach','Pear','Pineapple','Plums','Strawberries','Cherries','Tangerine','Watermelon'])
-fruits_selected = streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index),default=[0,1,2])
+#fruits_selected = streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index),default=[0,1,2])
+fruits_selected = streamlit.multiselect("Pick some fruits:",list(my_fruit_list.Fruit),default=['Apple', 'Avocado'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 #display on the page

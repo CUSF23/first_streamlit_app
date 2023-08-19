@@ -16,8 +16,9 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
 ## Provide and Option to select
-streamlit.multiselect('Pick some fruits:' , list(my_fruit_list.Fruit))
+fruits_slected=streamlit.multiselect('Pick some fruits:' , list(my_fruit_list.Fruit))
+fruits_to_show=my_fruit_list.loc[fruits_slected]
 
 #display on the page
-streamlit.dataframe(my_fruit_list)
+streamlit.dataframe(fruits_to_show)
 
